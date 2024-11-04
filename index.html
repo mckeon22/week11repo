@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Athlete Performance Tracker</h1>
+    </header>
+    <nav>
+        <span class="hamburger">&#9776;</span> <!-- The hamburger icon -->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li class="dropdown">
+                <a href="#">Grade Level</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Grade 9</a></li>
+                    <li><a href="#">Grade 10</a></li>
+                    <li><a href="#">Grade 11</a></li>
+                    <li><a href="#">Grade 12</a></li>
+                </ul>
+            </li>
+            <li><a href="results.html">Event Results</a></li>
+        </ul>
+    </nav>
+    <main>
+    </main>
+</body>
+</html>
+</body>
+</html>
+        <p>Welcome to the home page! Explore our services and learn more about us.</p>
+        <button class="fab">Filter</button>
+        <section id="team-scores">
+            <h2>Team Scores</h2>
+            <!-- Team stats table -->
+        </section>
+        
+        <section id="individual-results">
+            <h2>Individual Results</h2>
+            <!-- Individual athlete stats -->
+        </section>
+    </main>
+    
+    <!-- JS to toggle menu -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav ul');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

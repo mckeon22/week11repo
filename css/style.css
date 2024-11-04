@@ -1,0 +1,414 @@
+/* Import Google Fonts and Font Awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@400;500&display=swap');
+
+
+:root {
+  /* Light mode variables */
+  --bg-color: #F7F7F7;
+  --text-color: #212121;
+  --header-bg: #00705e;
+  --header-text-color: rgb(255, 255, 255);
+  --heading-color: #ffffff; 
+  --nav-bg: #004D40;
+  --nav-text-color: white;
+  --athlete-bg: rgb(255, 255, 255);
+  --athlete-text-color: #212121;
+  --first-place-bg: #FFF7D1;
+  --second-place-bg: #F1F1F1;
+  --third-place-bg: #F2E0D1;
+}
+
+
+.dark-mode {
+  /* Dark mode variables */
+  --bg-color: #1E1E1E;
+  --text-color: #ffffff;
+  --header-bg: #282828;
+  --header-text-color: #F1F1F1;
+  --heading-color: #ffffff; /* white heading for dark mode */
+  --nav-bg: #282828;
+  --nav-text-color: #F1F1F1;
+  --athlete-bg: #2C2C2C;
+  --athlete-text-color: #E0E0E0;
+  --first-place-bg: #666633;
+  --second-place-bg: #4A4A4A;
+  --third-place-bg: #5A3E2B;
+}
+.dark-mode h2,
+.dark-mode h3 {
+    color: rgb(0, 0, 0) !important;
+}
+
+.high-contrast-mode {
+   --bg-color: #000000; /* Black background */
+   --text-color: #FFFFFF; /* White text for better contrast */
+   --header-bg: #000000;
+   --header-text-color:  #FFD700; /* Bright yellow for headings */
+   --heading-color: #A0522D; 
+   --nav-bg: #000000;
+   --nav-text-color: #FFCC00; /* Yellow text in the navbar */
+   --athlete-bg: #000000;
+   --athlete-text-color: #FFCC00;
+   --first-place-bg: #FFCC00; /* Bright yellow for first place */
+   --second-place-bg: #C0C0C0; /* Silver background for second place */
+   --third-place-bg: #CD7F32; /* Bronze for third place */
+}
+
+.high-contrast-mode h2 {
+   color: var(--heading-color) !important; /* Force color override */
+}
+
+.high-contrast-mode h3 {
+   color: var(--heading-color) !important; /* Force color override */
+}
+
+
+
+/* Ensure text is readable */
+.high-contrast-mode header h1, 
+.high-contrast-mode #individual-results h2 {
+   color: var(--heading-color); /* Yellow for headings */
+}
+
+/* Table Styling for High Contrast Mode */
+.high-contrast-mode table th {
+   background-color: #000000; /* Black background for table header */
+   color: #FFCC00; /* Yellow text for table header */
+}
+
+.high-contrast-mode table td {
+   color: #FFFFFF; /* White text for table cells */
+}
+
+.high-contrast-mode table tr:nth-child(even) {
+   background-color: #333333; /* Dark grey for alternating rows */
+}
+
+
+header h1,
+#individual-results h2 {
+  color: var(--heading-color); /* Heading color will change based on the mode */
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+}
+body {
+   background-color: var(--bg-color);
+   color: var(--text-color);
+   font-family: 'Roboto', sans-serif;
+   margin: 0;
+   padding: 0;
+}
+
+
+/* Header styling */
+header {
+   text-align: center;
+   padding: 20px;
+   background-color: var(--header-bg);
+   color: var(--header-text-color);
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+header h1 {
+   font-size: clamp(2rem, 2.5vw, 3rem);
+   font-family: 'Oswald', sans-serif;
+   font-weight: 700;
+}
+
+
+/* Navbar Styling */
+nav ul {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   justify-content: center;
+   background-color: var(--nav-bg);
+}
+
+
+nav ul li {
+   margin: 0 20px;
+}
+
+
+nav ul li a {
+   color: var(--nav-text-color);
+   text-decoration: none;
+   padding: 10px;
+   display: block;
+   font-size: clamp(0.9rem, 1vw, 1.2rem);
+   transition: background-color 0.3s ease;
+}
+
+
+nav ul li a:hover {
+   background-color: #2ac2b0;
+}
+
+
+/* Dropdown Menu */
+.dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: #FFFFFF;
+   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+   z-index: 1;
+   padding: 10px;
+   border-radius: 5px;
+}
+
+
+.dropdown:hover .dropdown-content {
+   display: block;
+}
+
+
+.dropdown-content li a {
+   color: #004D40;
+   padding: 10px;
+   text-decoration: none;
+   display: block;
+}
+
+
+.dropdown-content li a:hover {
+   background-color: #E0F7FA;
+   color: #004D40;
+}
+
+
+/* Main Container */
+main {
+   margin: 20px;
+   padding: 20px;
+   background-color: white;
+   border-radius: 10px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   max-width: 1200px;
+   margin: 20px auto;
+   font-size: clamp(1rem, 1vw, 1.1rem);
+}
+
+
+/* Top Results Title */
+#individual-results h2 {
+   font-size: clamp(1.8rem, 2.5vw, 3rem);
+   font-family: 'Oswald', sans-serif;
+   font-weight: 700;
+   color: var(--text-color);
+   margin-bottom: 30px;
+   text-align: center;
+}
+
+
+/* Results Container */
+#results-container {
+   display: flex;
+   justify-content: space-between;
+   gap: 40px;
+   margin-top: 20px;
+}
+
+
+/* Individual Athlete Boxes */
+.athlete {
+   flex: 1;
+   padding: 25px;
+   border-radius: 15px;
+   background-color: var(--athlete-bg);
+   color: var(--athlete-text-color);
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   text-align: center;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.athlete:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Gold, Silver, Bronze Backgrounds */
+.athlete.first {
+   background-color: var(--first-place-bg);
+}
+
+
+.athlete.second {
+   background-color: var(--second-place-bg);
+}
+
+
+.athlete.third {
+   background-color: var(--third-place-bg);
+}
+
+
+/* Athlete Name */
+.athlete h3 {
+   font-size: clamp(1.5rem, 1.8vw, 2.2rem);
+   font-family: 'Oswald', sans-serif;
+   font-weight: 700;
+   color: var(--athlete-text-color);
+   margin-bottom: 10px;
+}
+
+
+/* Athlete Details with Icons */
+.athlete p {
+   font-size: clamp(1rem, 1vw, 1.2rem);
+   margin: 5px 0;
+}
+
+
+.athlete .icon {
+   margin-right: 8px;
+   color: #004D40;
+}
+
+
+.athlete img {
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   margin-top: 15px;
+   border: 3px solid white;
+   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.athlete img[alt*="Profile Picture"] {
+   display: none;
+}
+
+
+/* Styling the table header and rows for dark mode and high contrast mode */
+table {
+   background-color: var(--bg-color);
+   color: var(--text-color);
+   width: 100%;
+   border-collapse: collapse;
+   text-align: left;
+}
+
+
+table th, table td {
+   border: 1px solid var(--text-color);
+   padding: 12px;
+}
+
+
+table th {
+   background-color: var(--header-bg);
+   color: var(--header-text-color);
+}
+
+
+table tr:nth-child(even) {
+   background-color: var(--athlete-bg);
+}
+
+
+/* Footer */
+footer {
+   text-align: center;
+   padding: 20px;
+   background-color: var(--header-bg);
+   color: var(--header-text-color);
+   margin-top: 40px;
+}
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+   #results-container {
+       flex-direction: column;
+       align-items: center;
+   }
+   .athlete {
+       width: 100%;
+       margin-bottom: 20px;
+   }
+   nav ul {
+       flex-direction: column;
+       align-items: center;
+   }
+   nav ul li {
+       margin-bottom: 10px;
+   }
+}
+
+
+/* Style for the mode-switcher dropdown in the bottom-right corner */
+#theme-switcher-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; 
+}
+
+
+#theme-switcher-label {
+  background-color: #004D40;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+#theme-switcher-label:hover {
+  background-color: #2ac2b0; /* Lighter teal on hover */
+}
+
+
+#theme-switcher {
+  display: none; /* Hidden by default */
+  margin-top: 10px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+#theme-switcher button {
+  background-color: #004D40; /* Base teal color for buttons */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+#theme-switcher button:hover {
+  background-color: #2ac2b0; /* Lighter teal on hover */
+}
+
+
+#theme-switcher button:active {
+  background-color: #00332e; /* Darker teal when clicked */
+}
+
+
+#theme-switcher button:focus {
+  outline: 3px solid #FFD700; /* Highlight on focus (e.g., keyboard users) */
+}
+
+
+/* Show dropdown when hovered */
+#theme-switcher-container:hover #theme-switcher {
+  display: block;
+}
+

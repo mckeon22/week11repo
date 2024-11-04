@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css"> 
+    <link rel="stylesheet" href="css/style.css">
+    <title>Client Project - Results</title>
+</head>
+<body>
+    <header>
+        <h1>Athlete Performance Tracker</h1>
+    </header>
+    <nav>
+        <span class="hamburger">&#9776;</span> <!-- The hamburger icon -->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li class="dropdown">
+                <a href="#">Grade Level</a>
+                <ul class="dropdown-content">
+                    <li><a href="#"> 9</a></li>
+                    <li><a href="#">10</a></li>
+                    <li><a href="#"> 11</a></li>
+                    <li><a href="#"> 12</a></li>
+                </ul>
+            </li>
+            <li><a href="results.html">Event Results</a></li>
+        </ul>
+    </nav>
+    <main id="content">
+        <section id="event-title">
+            <h2>Womens 5000 Meters Junior Varsity</h2>
+        </section>
+        
+        <div id="theme-switcher-container">
+    <div id="theme-switcher-label">Appearance</div>
+    <div id="theme-switcher">
+        <button id="light-mode-btn">Light Mode</button>
+        <button id="dark-mode-btn">Dark Mode</button>
+        <button id="high-contrast-btn">High Contrast</button>
+    </div>
+</div>
+
+        <section id="team-scores">
+            <h3>Team Scores</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Place</th>
+                        <th>Team</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Ypsilanti Lincoln</td>
+                        <td>22</td>
+                    </tr>
+        
+                    <tr>
+                        <td>2</td>
+                        <td>Saline</td>
+                        <td>73</td>
+                    </tr>
+        
+                    <tr>
+                        <td>3</td>
+                        <td>Dexter</td>
+                        <td>81</td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </section>
+        <section id="individual-results">
+            <h2>Top 3 Results</h2>
+            <div id="results-container">
+
+            <div class="athlete first-place">
+                <h3><i class="fas fa-medal" style="color: gold;"></i> Riley Provost</h3>
+                <p><i class="fas fa-trophy icon"></i> Place: 1.</p>
+                <p><i class="fas fa-graduation-cap icon"></i> Grade: 11</p>
+                <p><i class="fas fa-stopwatch icon"></i> Time: 23:15.00</p>
+                <p><i class="fas fa-users icon"></i> Team: Saline</p>
+                <img src="images/14164024.jpg" alt="Profile Picture of Riley Provost" width="150">
+            </div>
+        
+            <div class="athlete second-place">
+                <h3><i class="fas fa-medal" style="color: silver;"></i> Claire Steinbrecher</h3>
+                <p><i class="fas fa-trophy icon"></i> Place: 2.</p>
+                <p><i class="fas fa-graduation-cap icon"></i> Grade: 9</p>
+                <p><i class="fas fa-stopwatch icon"></i> Time: 23:18.50</p>
+                <p><i class="fas fa-users icon"></i> Team: Dexter</p>
+                <img src="images/21411167.jpg" alt="Profile Picture of Claire Steinbrecher" width="150">
+            </div>
+        
+            <div class="athlete third-place">
+                <h3><i class="fas fa-medal" style="color: #CD7F32;"></i> Mahalia Staton</h3>
+                <p><i class="fas fa-trophy icon"></i> Place: 3.</p>
+                <p><i class="fas fa-graduation-cap icon"></i> Grade: 11</p>
+                <p><i class="fas fa-stopwatch icon"></i> Time: 23:20.50</p>
+                <p><i class="fas fa-users icon"></i> Team: Saline</p>
+                <img src="images/22262892.jpg" alt="Profile Picture of Mahalia Staton" width="150">
+            </div>
+        
+            </div>
+        </section>
+    </main>
+    <footer id="main-footer">
+        <p>&copy; 2024 Client Project - All rights reserved.</p>
+    </footer>
+
+    <!-- Theme switcher JavaScript -->
+    <script>
+    // Get the buttons and listen for click events
+    document.getElementById('light-mode-btn').addEventListener('click', () => {
+        document.body.classList.remove('dark-mode', 'high-contrast-mode');
+    });
+
+    document.getElementById('dark-mode-btn').addEventListener('click', () => {
+        document.body.classList.add('dark-mode');
+        document.body.classList.remove('high-contrast-mode');
+    });
+
+    document.getElementById('high-contrast-btn').addEventListener('click', () => {
+        document.body.classList.add('high-contrast-mode');
+        document.body.classList.remove('dark-mode');
+    });
+    </script>
+</body>
+</html>

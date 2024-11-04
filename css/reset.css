@@ -1,0 +1,274 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #ff24d7;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Navbar Styling */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  background-color: #f648d6;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #f678df;
+  color: #e2e6ea;
+  border-radius: 4px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  background-color: ##004D40;
+  text-align: center;
+}
+
+/* Show menu on click */
+nav ul.show {
+  display: flex;
+}
+
+/* Responsive Nav: Display flex for larger screens */
+@media (min-width: 768px) {
+  nav ul {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+  }
+
+  .hamburger {
+      display: none;
+  }
+}
+
+main {
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+main p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* Table Styling */
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  table-layout: auto;  /* Allows columns to adjust based on content */
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background-color: #004D40;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+}
+
+tbody td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+/* Fix width issues */
+table th, table td {
+  min-width: 100px;  /* Set minimum width to prevent collapsing */
+}
+
+/* Ensuring no horizontal overflow */
+table {
+  overflow-x: auto;
+}
+
+/* Alternating Row Colors for Readability */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #9bcbc1;
+}
+
+/* Table Reflow for Mobile */
+@media (max-width: 768px) {
+  table {
+      display: block;
+  }
+  
+  thead {
+      display: none;
+  }
+
+  tbody tr {
+      display: block;
+      margin-bottom: 20px;
+  }
+
+  tbody td {
+      display: block;
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+  }
+
+  tbody td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 15px;
+      font-weight: bold;
+      text-align: left;
+  }
+}
+
+/* Priority Data on Mobile */
+@media (max-width: 768px) {
+  td:nth-child(3), th:nth-child(3) {
+      display: none;
+  }
+
+  td:first-child, th:first-child {
+      font-weight: bold;
+      color: #04443e;
+  }
+}
+
+/* Collapsible Sections */
+.collapsible {
+  background-color: #003427;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.collapsible.active, .collapsible:hover {
+  background-color: #01453a;
+}
+
+.collapsible-content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.collapsible-content p {
+  padding: 15px;
+}
+
+/* Progress Bar */
+.progress-container {
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 25px;
+  margin: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #ff24d7;
+  width: 0;
+  border-radius: 25px;
+  transition: width 1s ease-in-out;
+}
+
+.progress-text {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Larger Screens */
+@media (min-width: 768px) {
+  nav ul li {
+      margin: 0 25px;
+  }
+
+  main {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px;
+  }
+
+  table {
+      width: 80%;
+      margin: 30px auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+      max-width: 900px;
+  }
+
+  table {
+      width: 70%;
+  }
+}
